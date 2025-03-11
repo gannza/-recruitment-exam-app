@@ -1,0 +1,23 @@
+stages:
+  - build
+  - release
+
+deploy:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+    - npm run electron:package
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - main
+
+release:
+  stage: release
+  script:
+    - mv dist/*.exe dist/latest.exe
+    - curl --header "PRIVATE-TOKEN: $CI_JOB_TOKEN" --upload-file dist/latest.exe "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/releases"
+  only:
+    - main

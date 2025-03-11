@@ -1,0 +1,24 @@
+{
+  "name": "E-recruitment Exam portal",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+      "start": "concurrently \"npm run react:start\" \"npm run electron:dev\"",
+      "react:start": "react-scripts start",
+      "build": "npm run react:build && npm run electron:package",
+      "react:build": "react-scripts build",
+      "electron:dev": "electron src/main/main.js", 
+      "electron:package": "electron-builder"
+  },
+  "dependencies": {
+      "electron-updater": "^5.0.0",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+      "concurrently": "^7.0.0",
+      "electron": "^35.0.1",
+      "electron-builder": "^24.0.0",
+      "react-scripts": "^5.0.1"
+  }
+}

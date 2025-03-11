@@ -1,0 +1,25 @@
+{
+    "appId": "com.example.electronapp",
+    "productName": "E-recruitment Exam portal",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "dist/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "artifactName": "${productName}-setup-${version}.${ext}"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "publish": [{
+      "provider": "generic",
+      "url": "http://172.27.8.69/e-recruitment-exam-app/releases"
+    }]
+  }

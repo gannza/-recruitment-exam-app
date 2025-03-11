@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",               // Set the target JavaScript version
+    "module": "CommonJS",          // Use CommonJS module system
+    "outDir": "dist",              // Output directory for compiled files
+    "strict": true,                // Enable strict type-checking options
+    "esModuleInterop": true,       // Enable ES module interoperability
+    "skipLibCheck": true,          // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "electron"], // Ensure electron types are added here
+    "jsx": "react-jsx"                 // Enable JSX support for React
+  },
+  "include": ["src", "electron.d.ts"],  // Include your source files and any TypeScript declaration files
+  "exclude": ["node_modules"]           // Exclude node_modules from TypeScript compilation
+}
